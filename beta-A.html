@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beta A — Pole z góry, tekst centrum</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; }
+
+  nav {
+    position:absolute; top:0; left:0; right:0; z-index:20;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px 56px;
+  }
+  .logo { color:#fff; font-family:'Playfair Display',serif; font-size:1.45rem; font-weight:700; text-decoration:none; }
+  .logo span { color:#C9A84C; }
+  nav ul { list-style:none; display:flex; gap:32px; }
+  nav a { color:rgba(255,255,255,.75); text-decoration:none; font-size:.82rem; font-weight:500; letter-spacing:.5px; transition:color .2s; }
+  nav a:hover { color:#fff; }
+  .cta-nav { background:#C9A84C !important; color:#1A1A1A !important; padding:10px 24px; border-radius:7px; font-weight:700 !important; letter-spacing:0 !important; }
+
+  .hero {
+    position:relative; height:100vh; min-height:620px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; overflow:hidden;
+  }
+  .bg {
+    position:absolute; inset:0;
+    background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=85') center/cover no-repeat;
+  }
+  .overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.55) 50%, rgba(0,0,0,.75) 100%);
+  }
+
+  .content {
+    position:relative; z-index:5;
+    max-width:780px; padding:0 32px;
+  }
+
+  .badge {
+    display:inline-block;
+    background:rgba(201,168,76,.18); border:1px solid rgba(201,168,76,.45);
+    color:#C9A84C; font-size:.67rem; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+    padding:6px 18px; border-radius:100px; margin-bottom:32px;
+    animation:up .7s ease both;
+  }
+  h1 {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.4rem,4.5vw,3.8rem);
+    color:#fff; line-height:1.17; font-weight:700;
+    margin-bottom:0;
+    animation:up .8s .12s ease both;
+  }
+  h1 em { color:#C9A84C; font-style:italic; display:block; }
+  p {
+    font-size:1rem; color:rgba(255,255,255,.72); line-height:1.75;
+    margin:22px auto 44px; max-width:520px;
+    animation:up .8s .24s ease both;
+  }
+  .btn {
+    display:inline-block; background:#C9A84C; color:#1A1A1A;
+    padding:16px 44px; border-radius:8px; font-weight:700; font-size:.97rem;
+    text-decoration:none; transition:all .2s;
+    box-shadow:0 6px 24px rgba(201,168,76,.4);
+    animation:up .8s .36s ease both;
+  }
+  .btn:hover { background:#b8973e; transform:translateY(-2px); }
+
+  @keyframes up {
+    from { opacity:0; transform:translateY(22px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  .stats {
+    position:absolute; bottom:0; left:0; right:0; z-index:6;
+    display:flex; justify-content:center;
+    background:rgba(0,0,0,.35); backdrop-filter:blur(14px);
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .stat { padding:18px 44px; text-align:center; border-right:1px solid rgba(255,255,255,.1); }
+  .stat:last-child { border-right:none; }
+  .sn { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:#C9A84C; }
+  .sl { font-size:.67rem; color:rgba(255,255,255,.5); letter-spacing:1.5px; text-transform:uppercase; margin-top:4px; }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="bg"></div>
+  <div class="overlay"></div>
+  <nav>
+    <a href="#" class="logo">Gruntown<span>ie</span></a>
+    <ul>
+      <li><a href="#">Jak to działa</a></li>
+      <li><a href="#">Cennik</a></li>
+      <li><a href="#">Dla agentów</a></li>
+    </ul>
+    <a href="#" class="cta-nav">Sprawdź działkę</a>
+  </nav>
+  <div class="content">
+    <div class="badge">AI + 20 rejestrów urzędowych · Wynik w 90 sekund</div>
+    <h1>Znajdziemy problem z Twoją działką.<em>I powiemy jak go rozwiązać.</em></h1>
+    <p>MPZP, strefa zalewowa, klasa gruntu, uzbrojenie, Natura 2000 i więcej.<br>Dane z GUGiK, GDOŚ, ISOK, PIG i innych rejestrów państwowych.</p>
+    <a href="#" class="btn">Sprawdź swoją działkę →</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="sn">20+</div><div class="sl">Źródeł danych</div></div>
+    <div class="stat"><div class="sn">90s</div><div class="sl">Czas analizy</div></div>
+    <div class="stat"><div class="sn">39,99</div><div class="sl">Cena raportu (zł)</div></div>
+    <div class="stat"><div class="sn">PDF</div><div class="sl">Raport do pobrania</div></div>
+  </div>
+</section>
+</body>
+</html>
